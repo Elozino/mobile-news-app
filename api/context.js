@@ -10,10 +10,13 @@ const ContextProvider = ({ children }) => {
   const [index, setIndex] = useState(0);
 
   const fetchNews = async () => {
-    const data = await axios.get(getNewsAPI(category));
-    setNews(articles);
-    setIndex(1);
-    console.log(data);
+    await fetch(getNewsAPI("general"))
+      .then((response) => response.json())
+      .then((data) => {
+        setNews(data);
+        // console.log(data);
+      })
+      .catch((err) => console.error(err));
   };
 
   useEffect(() => {
