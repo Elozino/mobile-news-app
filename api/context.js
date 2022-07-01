@@ -23,16 +23,6 @@ const ContextProvider = ({ children }) => {
   };
 
   const fetchNewsFromSource = async () => {
-    // await axios
-    //   .get(getSourceAPI(source))
-    //   .then((data) => {
-    //     // console.log(data);
-    //     setNews(data);
-    //     setIndex(1);
-    //     console.log("ok")
-    //   })
-    //   .catch((err) => console.log(err));
-
     await fetch(getSourceAPI(source))
       .then((response) => response.json())
       .then((data) => {
