@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { View, useWindowDimensions, StyleSheet } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 import { NewsContext } from '../api/context';
-import { Discover, News } from '../screens';
+import Discover from "../screens/Discover"
+import News from "../screens/News"
 import TopNavBar from './TopNavBar';
 
 const renderScene = SceneMap({

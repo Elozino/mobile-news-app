@@ -1,10 +1,17 @@
+import { useContext } from "react";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
-import ContextProvider from "./api/context";
-import { InshortTab } from "./components";
+import ContextProvider, { NewsContext } from "./api/context";
+import InshortTab from "./components/InshortTab";
 
 function App() {
+  const { darkMode } = useContext(NewsContext);
   return (
-    <View style={{ ...styles.container, backgroundColor: "#282c35" }}>
+    <View
+      style={{
+        ...styles.container,
+        backgroundColor: darkMode ? "#282c35" : "#fff",
+      }}
+    >
       <InshortTab />
     </View>
   );
